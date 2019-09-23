@@ -1,0 +1,219 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SVS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SV" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="TYPE"/>
+              <xs:element name="BREAKPOINT1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CHR"/>
+                    <xs:element type="xs:int" name="POS"/>
+                    <xs:element type="xs:string" name="CYTOGENETIC_BAND"/>
+                    <xs:element name="DISRUPTED_TRANSCRIPTS" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TRANSCRIPT" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="EXON" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="LAST_EXON" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                              <xs:attribute type="xs:string" name="TRANSCRIPT_ID" use="optional"/>
+                              <xs:attribute type="xs:string" name="TRANSCRIPT_NAME" use="optional"/>
+                              <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="INTERGENIC_REGION" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="LEFT"/>
+                          <xs:element type="xs:string" name="RIGHT"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BREAKPOINT2">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CHR"/>
+                    <xs:element type="xs:int" name="POS"/>
+                    <xs:element type="xs:string" name="CYTOGENETIC_BAND" minOccurs="0"/>
+                    <xs:element name="DISRUPTED_TRANSCRIPTS" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TRANSCRIPT" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                <xs:element name="EXON">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="LAST_EXON">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                              <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                              <xs:attribute type="xs:string" name="TRANSCRIPT_ID" use="optional"/>
+                              <xs:attribute type="xs:string" name="TRANSCRIPT_NAME" use="optional"/>
+                              <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="INTERGENIC_REGION" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="LEFT"/>
+                          <xs:element type="xs:string" name="RIGHT"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CONTAINED_GENES" minOccurs="0">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="GENE" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DEL" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="FRAMESHIFT" use="optional"/>
+                      <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                      <xs:attribute type="xs:string" name="TRANSCRIPT" use="optional"/>
+                      <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                      <xs:attribute type="xs:string" name="CHR" use="optional"/>
+                      <xs:attribute type="xs:int" name="LOC" use="optional"/>
+                      <xs:attribute type="xs:int" name="LEN" use="optional"/>
+                      <xs:attribute type="xs:int" name="CODON_NUM" use="optional"/>
+                      <xs:attribute type="xs:int" name="CDS" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EXON_SKIP" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                      <xs:attribute type="xs:string" name="TRANSCRIPT" use="optional"/>
+                      <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                      <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DELINS" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                      <xs:attribute type="xs:string" name="TRANSCRIPT" use="optional"/>
+                      <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                      <xs:attribute type="xs:int" name="EXON_NUM" use="optional"/>
+                      <xs:attribute type="xs:string" name="CHR" use="optional"/>
+                      <xs:attribute type="xs:int" name="LOC" use="optional"/>
+                      <xs:attribute type="xs:int" name="LEN" use="optional"/>
+                      <xs:attribute type="xs:int" name="CODON_NUM" use="optional"/>
+                      <xs:attribute type="xs:int" name="CDS" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ITD" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="FRAMESHIFT" use="optional"/>
+                      <xs:attribute type="xs:string" name="GENE" use="optional"/>
+                      <xs:attribute type="xs:string" name="TRANSCRIPT" use="optional"/>
+                      <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                      <xs:attribute type="xs:string" name="CHR" use="optional"/>
+                      <xs:attribute type="xs:int" name="LOC" use="optional"/>
+                      <xs:attribute type="xs:int" name="LEN" use="optional"/>
+                      <xs:attribute type="xs:int" name="CODON_NUM" use="optional"/>
+                      <xs:attribute type="xs:int" name="CDS" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="FUSIONS" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="DYSFUNCTIONAL_FUSION" minOccurs="0"/>
+                    <xs:element name="FUSION" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FIVE_PRIME_GENE">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="THREE_PRIME_GENE">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="BIOTYPE" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="INFRAME" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
