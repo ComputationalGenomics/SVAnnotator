@@ -49,7 +49,7 @@ SVAnnotator uses tab separated text files with coordinates, strand orientations,
 
 ## Output
 
-SVAnnotator analysis provides information on breakpoints with coordinates and cytogenetic band in an eXtensible Markup Language (XML) file. If a breakpoint falls in a transcript, information about whether it lies in an exonic or intronic region is shown. For fusions, 5 prime and 3 prime genes are identified. Likewise, for dysfunctional fusions, genes are displayed without order assignment. For exon skipping events, internal tandem duplications (ITDs), deletions, and deletion-insertion events, the information for each transcript is provided. More details are found in the XML schema in SVAnnotator.xsd.
+SVAnnotator analysis provides information on breakpoints with coordinates and cytogenetic band in an eXtensible Markup Language (XML) file. If a breakpoint falls in a transcript, information about whether it lies in an exonic or intronic region is shown. For fusions, 5 prime and 3 prime genes are identified. Likewise, for dysfunctional fusions, genes are displayed without order assignment. For exon skipping events, internal tandem duplications (ITDs), deletions, and deletion-insertion events, the information for each transcript is provided. More details are found in the XML schema in [SVAnnotator.xsd](https://github.com/ComputationalGenomics/SVAnnotator/blob/master/SVAnnotator.xsd).
 
 ## Test
 
