@@ -61,7 +61,7 @@ Takahiko Koyama tkoyama@us.ibm.com
 
 ## License
 
-Please, refer to the license file in the directory.
+Please, refer to the [license](https://github.com/ComputationalGenomics/SVAnnotator/blob/master/license.txt) in the directory.
 
 ## Citing SVAnnotator
 
