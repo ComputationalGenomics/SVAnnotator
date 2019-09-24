@@ -53,7 +53,7 @@ SVAnnotator analysis provides information on breakpoints with coordinates and cy
 
 ## Test
 
-A test [input file](https://github.com/ComputationalGenomics/SVAnnotator/blob/master/SVAnnotator_test.txt) and corresponding output xml are in the directory.
+A test [input file](https://github.com/ComputationalGenomics/SVAnnotator/blob/master/SVAnnotator_test.txt) and corresponding [output xml](https://github.com/ComputationalGenomics/SVAnnotator/blob/master/SVAnnotator_test_out.xml) are in the directory.
 
 ## Author
 
