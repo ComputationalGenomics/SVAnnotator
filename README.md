@@ -3,7 +3,7 @@ SVannotator was developed to alleviate the cumbersome annotation process of stru
 
 ## Prerequisite
 
-- python 3.7 or python 2.7
+- python 3.7
 - GTF file, which should be compatible with your SV file.  
   - [GRCh37 GTF](https://grch37.ensembl.org/info/data/ftp/index.html)
   - [GRCh38 GTF](https://useast.ensembl.org/info/data/ftp/index.html)
