@@ -24,7 +24,7 @@ Depending on python in your system, select appropriate byte code compiled python
 You need GTF file, census gene file, and cytogenetic band files of your choice of genome assembly version to build an SVAnnotator database.
 
 ```
-python SVAnnotator_create_db_1.0.0_cpython37.pyc <gtf> <census gene> <cytogenetic>
+python SVAnnotator_create_DB_1.0.0.cpython-37.pyc <gtf> <census gene> <cytogenetic>
 ```
 
 should generate SVAnnotator.db
@@ -32,7 +32,7 @@ should generate SVAnnotator.db
 ## Usage
 
 ```
-python SVAnnotator_1.0.0_cpython37.pyc SVAnnotator.db <input file> <output file>
+python SVAnnotator_1.0.0.cpython-37.pyc SVAnnotator.db <input file> <output file>
 ```
 
 ## Input
