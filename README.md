@@ -1,5 +1,5 @@
 # SVAnnotator
-SVannotator was developed to alleviate the cumbersome annotation process of structural variants (SV). It uses outputs from SV callers to transform SV events into a human-interpretable format such as “exon skipping.”
+SVannotator was developed to alleviate the cumbersome annotation process of structural variants (SV). It uses outputs from SV callers to transform SV events into a human-interpretable format such as exon skipping, tandem duplication, and disruption as well as fusion.
 
 ## Prerequisite
 
@@ -24,7 +24,7 @@ Depending on python in your system, select appropriate byte code compiled python
 You need GTF file, census gene file, and cytogenetic band files of your choice of genome assembly version to build an SVAnnotator database.
 
 ```
-python SVAnnotator_create_DB_1.0.0.cpython-37.pyc <gtf> <census gene> <cytogenetic>
+python SVAnnotator_create_DB_1.0.0.cpython-37.pyc <GTF file> <census gene file> <cytogenetic file>
 ```
 
 should generate SVAnnotator.db
